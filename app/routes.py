@@ -53,7 +53,7 @@ def register():
 @login_required
 def player(username):
     player = Player.query.filter_by(username=username).first_or_404()
-    matches = player.matches_won
+    matches = [m for m in player.matches_won]
     matches.extend(player.matches_lost)
     matches.sort(key=lambda x:x.date_played)
     return render_template('player.html', player=player, matches=matches)
