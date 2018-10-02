@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Player: {{ player.last_name }}, {{ player.first_name }}</h1>
+	<p>Username: {{ player.username }}</p>
+
+	<h2>Matches</h2>
+	{% if matches is iterable %}
+	<ul>
+		{% for match in matches %}
+		{% if match.winner.username == player.username %}
+		<li>Won (against {{ match.loser.last_name }}, {{ match.loser.first_name }})
+			on {{ match.date_played }}</li>
+		{% else %}
+		<li>Lost (against {{ match.winner.last_name }}, {{ match.winner.first_name }} 
+			on {{ match.played_on }}</li>
+		{% endif %}
+		{% endfor %}
+	</ul>
+	{% else %}
+	<p>No matches played yet</p>
+	{% endif %}
+{% endblock %}
