@@ -8,13 +8,13 @@
 	{% if matches is iterable %}
 	<ul>
 		{% for match in matches %}
-		{% if match.winner.username == player.username %}
-		<li>Won (against {{ match.loser.last_name }}, {{ match.loser.first_name }})
-			on {{ match.date_played }}</li>
-		{% else %}
-		<li>Lost (against {{ match.winner.last_name }}, {{ match.winner.first_name }} 
-			on {{ match.played_on }}</li>
-		{% endif %}
+			{% if match.winner.id == player.id %}
+			<li>Won (against {{ match.loser.last_name }}, {{ match.loser.first_name }})
+				on {{ match.date_played }}</li>
+			{% else %}
+			<li>Lost (against {{ match.winner.last_name }}, {{ match.winner.first_name }})
+				on {{ match.date_played }}</li>
+			{% endif %}
 		{% endfor %}
 	</ul>
 	{% else %}
