@@ -1,6 +1,8 @@
 from app import db, login
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from hashlib import md5
+from datetime import datetime
 
 
 class Player(UserMixin, db.Model):
@@ -10,6 +12,8 @@ class Player(UserMixin, db.Model):
     last_name = db.Column(db.String(64), index=True)
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
+    about_me = db.Column(db.String(255))
+    last_seen = db.Column(db.DateTime, default=datetime.utcnow)
     matches_won = db.relationship('Match', backref="winner", foreign_keys='Match.winner_id', lazy=True)
     matches_lost = db.relationship('Match', backref="loser", foreign_keys='Match.loser_id', lazy=True)
     games_won = db.relationship('Game', backref="winner", foreign_keys='Game.winner_id', lazy=True)
@@ -23,6 +27,10 @@ class Player(UserMixin, db.Model):
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+    def avatar(self, size):
+        digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, size)
 
 
 class Match(db.Model):

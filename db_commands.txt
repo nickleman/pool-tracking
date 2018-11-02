@@ -1,0 +1,4912 @@
+# Create Players
+p = Player(username='nichols',first_name='Doug',last_name='Nichols',email='doug.nichols@ge.com')
+p.set_password(p.username)
+db.session.add(p)
+p = Player(username='benham',first_name='Steve',last_name='Benham',email='steven.benham@ge.com')
+p.set_password(p.username)
+db.session.add(p)
+p = Player(username='benbrook',first_name='Jim',last_name='Benbrook',email='james.benbrook@ge.com')
+p.set_password(p.username)
+db.session.add(p)
+p = Player(username='olund',first_name='Jim',last_name='Olund',email='james.olund@ge.com')
+p.set_password(p.username)
+db.session.add(p)
+p = Player(username='burling',first_name='Dave',last_name='Burling',email='dave.burling3@ge.com')
+p.set_password(p.username)
+db.session.add(p)
+p = Player(username='mcenroe',first_name='Doug',last_name='McEnroe',email='douglasmcenroe@sbcglobal.net')
+p.set_password(p.username)
+db.session.add(p)
+p = Player(username='field',first_name='Cliff',last_name='Field',email='clifford.field@ge.com')
+p.set_password(p.username)
+db.session.add(p)
+p = Player(username='flynn',first_name='Tom',last_name='Flynn',email='flynn.thomas@ge.com')
+p.set_password(p.username)
+db.session.add(p)
+p = Player(username='arnold',first_name='Mike',last_name='Arnold',email='mike.arnold67@gmail.com')
+p.set_password(p.username)
+db.session.add(p)
+p = Player(username='osborne',first_name='Joe',last_name='Osborne',email='joe.osborne@ge.com')
+p.set_password(p.username)
+db.session.add(p)
+p = Player(username='igoe',first_name='Terry',last_name='Igoe',email='tmi1450@gmail.com')
+p.set_password(p.username)
+db.session.add(p)
+db.session.commit()
+ 
+from datetime import date
+ 
+# Week 13
+# Benbrook v Osborne
+m = Match(date_played=date(2018, 8, 14))
+l = Player.query.filter_by(username='osborne').first()
+m.loser=l
+m.loser_skill=3
+m.loser_must_win=2
+m.loser_points_won=0
+w = Player.query.filter_by(username='benbrook').first()
+m.winner=w
+m.winner_skill=5
+m.winner_must_win=4
+m.winner_points_won=3
+db.session.add(m)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+db.session.commit()
+ 
+# Nichols v Igoe
+m = Match(date_played=date(2018, 8, 14))
+l = Player.query.filter_by(username='nichols').first()
+m.loser=l
+m.loser_skill=4
+m.loser_must_win=3
+m.loser_points_won=0
+w = Player.query.filter_by(username='igoe').first()
+m.winner=w
+m.winner_skill=4
+m.winner_must_win=3
+m.winner_points_won=2
+db.session.add(m)
+g = Game()
+g.match=m
+g.winner=l
+g.loser=w
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+db.session.commit()
+ 
+# Benham v Burling
+m = Match(date_played=date(2018, 8, 14))
+l = Player.query.filter_by(username='benham').first()
+m.loser=l
+m.loser_skill=5
+m.loser_must_win=4
+m.loser_points_won=0
+w = Player.query.filter_by(username='burling').first()
+m.winner=w
+m.winner_skill=5
+m.winner_must_win=4
+m.winner_points_won=2
+db.session.add(m)
+g = Game()
+g.match=m
+g.winner=l
+g.loser=w
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=l
+g.loser=w
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+db.session.commit()
+ 
+ 
+# Week 14
+# Olund v Flynn
+m = Match(date_played=date(2018, 8, 21))
+l = Player.query.filter_by(username='olund').first()
+m.loser=l
+m.loser_skill=5
+m.loser_must_win=4
+m.loser_points_won=0
+w = Player.query.filter_by(username='flynn').first()
+m.winner=w
+m.winner_skill=6
+m.winner_must_win=5
+m.winner_points_won=2
+db.session.add(m)
+g = Game()
+g.match=m
+g.winner=l
+g.loser=w
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+db.session.commit()
+ 
+# Nichols v Burling
+m = Match(date_played=date(2018, 8, 21))
+l = Player.query.filter_by(username='nichols').first()
+m.loser=l
+m.loser_skill=3
+m.loser_must_win=2
+m.loser_points_won=1
+w = Player.query.filter_by(username='burling').first()
+m.winner=w
+m.winner_skill=5
+m.winner_must_win=4
+m.winner_points_won=2
+db.session.add(m)
+g = Game()
+g.match=m
+g.winner=l
+g.loser=w
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+db.session.commit()
+ 
+# Field v Benham
+m = Match(date_played=date(2018, 8, 21))
+l = Player.query.filter_by(username='field').first()
+m.loser=l
+m.loser_skill=4
+m.loser_must_win=3
+m.loser_points_won=0
+w = Player.query.filter_by(username='benham').first()
+m.winner=w
+m.winner_skill=5
+m.winner_must_win=4
+m.winner_points_won=2
+db.session.add(m)
+g = Game()
+g.match=m
+g.winner=l
+g.loser=w
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+db.session.commit()
+ 
+ 
+# Week 15
+# Benbrook v Igoe
+m = Match(date_played=date(2018, 8, 28))
+l = Player.query.filter_by(username='igoe').first()
+m.loser=l
+m.loser_skill=4
+m.loser_must_win=3
+m.loser_points_won=1
+w = Player.query.filter_by(username='benbrook').first()
+m.winner=w
+m.winner_skill=5
+m.winner_must_win=4
+m.winner_points_won=2
+db.session.add(m)
+g = Game()
+g.match=m
+g.winner=l
+g.loser=w
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=l
+g.loser=w
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+db.session.commit()
+ 
+# Osborne v Burling
+m = Match(date_played=date(2018, 8, 28))
+l = Player.query.filter_by(username='osborne').first()
+m.loser=l
+m.loser_skill=3
+m.loser_must_win=2
+m.loser_points_won=0
+w = Player.query.filter_by(username='burling').first()
+m.winner=w
+m.winner_skill=5
+m.winner_must_win=4
+m.winner_points_won=3
+db.session.add(m)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+db.session.commit()
+ 
+# Olund v Benham
+m = Match(date_played=date(2018, 8, 28))
+l = Player.query.filter_by(username='olund').first()
+m.loser=l
+m.loser_skill=5
+m.loser_must_win=4
+m.loser_points_won=1
+w = Player.query.filter_by(username='benham').first()
+m.winner=w
+m.winner_skill=5
+m.winner_must_win=4
+m.winner_points_won=2
+db.session.add(m)
+g = Game()
+g.match=m
+g.winner=l
+g.loser=w
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=l
+g.loser=w
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=l
+g.loser=w
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+db.session.commit()
+ 
+ 
+# Week 16
+# Benbrook v Flynn
+m = Match(date_played=date(2018, 9, 4))
+l = Player.query.filter_by(username='benbrook').first()
+m.loser=l
+m.loser_skill=5
+m.loser_must_win=4
+m.loser_points_won=0
+w = Player.query.filter_by(username='flynn').first()
+m.winner=w
+m.winner_skill=6
+m.winner_must_win=5
+m.winner_points_won=2
+db.session.add(m)
+g = Game()
+g.match=m
+g.winner=l
+g.loser=w
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=l
+g.loser=w
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+g = Game()
+g.match=m
+g.winner=w
+g.loser=l
+db.session.add(g)
+db.session.commit()
+ 
+# Igoe v Burling
+m = Match(date_played=date(2018, 9, 4))
+l = Player.query.filter_by(username='burling').first()
+m.loser=l
+m.loser_skill=5
+m.loser_must_win=4
+m.loser_points_won=0
+w = Player.query.filter_by(username='igoe').first()
+m.winner=w
+
+m.winner_skill=4
+
+m.winner_must_win=3
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Olund v Nichols
+
+m = Match(date_played=date(2018, 9, 4))
+
+l = Player.query.filter_by(username='nichols').first()
+
+m.loser=l
+
+m.loser_skill=3
+
+m.loser_must_win=2
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='olund').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+ 
+
+# Week 17
+
+# Benbrook v Burling
+
+m = Match(date_played=date(2018, 9, 11))
+
+l = Player.query.filter_by(username='benbrook').first()
+
+m.loser=l
+
+m.loser_skill=5
+
+m.loser_must_win=4
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='burling').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Flynn v Benham
+
+m = Match(date_played=date(2018, 9, 11))
+
+l = Player.query.filter_by(username='flynn').first()
+
+m.loser=l
+
+m.loser_skill=6
+
+m.loser_must_win=5
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='benham').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Osborne v Olund
+
+m = Match(date_played=date(2018, 9, 11))
+
+l = Player.query.filter_by(username='osborne').first()
+
+m.loser=l
+
+m.loser_skill=3
+
+m.loser_must_win=2
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='olund').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+ 
+
+# Week 18
+
+# Benbrook v Benham
+
+m = Match(date_played=date(2018, 9, 18))
+
+l = Player.query.filter_by(username='benbrook').first()
+
+m.loser=l
+
+m.loser_skill=5
+
+m.loser_must_win=4
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='benham').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Flynn v Nichols
+
+m = Match(date_played=date(2018, 9, 18))
+
+l = Player.query.filter_by(username='nichols').first()
+
+m.loser=l
+
+m.loser_skill=3
+
+m.loser_must_win=2
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='flynn').first()
+
+m.winner=w
+
+m.winner_skill=6
+
+m.winner_must_win=5
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Igoe v Olund
+
+m = Match(date_played=date(2018, 9, 18))
+
+l = Player.query.filter_by(username='olund').first()
+
+m.loser=l
+
+m.loser_skill=5
+
+m.loser_must_win=4
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='igoe').first()
+
+m.winner=w
+
+m.winner_skill=4
+
+m.winner_must_win=3
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+ 
+
+# Week 1
+
+# Benbrook v Field
+
+m = Match(date_played=date(2018, 5, 8))
+
+l = Player.query.filter_by(username='field').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='benbrook').first()
+
+m.winner=w
+
+m.winner_skill=4
+
+m.winner_must_win=3
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Benham v Nichols
+
+m = Match(date_played=date(2018, 5, 8))
+
+l = Player.query.filter_by(username='nichols').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='benham').first()
+
+m.winner=w
+
+m.winner_skill=4
+
+m.winner_must_win=3
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Burling v Olund
+
+m = Match(date_played=date(2018, 5, 8))
+
+l = Player.query.filter_by(username='burling').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='olund').first()
+
+m.winner=w
+
+m.winner_skill=4
+
+m.winner_must_win=3
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Flynn v Osborne
+
+m = Match(date_played=date(2018, 5, 8))
+
+l = Player.query.filter_by(username='osborne').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='flynn').first()
+
+m.winner=w
+
+m.winner_skill=6
+
+m.winner_must_win=5
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+ 
+
+# Week 2
+
+# Benbrook v Nichols
+
+m = Match(date_played=date(2018, 5, 15))
+
+l = Player.query.filter_by(username='nichols').first()
+
+m.loser=l
+
+m.loser_skill=3
+
+m.loser_must_win=2
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='benbrook').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Field v Olund
+
+m = Match(date_played=date(2018, 5, 15))
+
+l = Player.query.filter_by(username='olund').first()
+
+m.loser=l
+
+m.loser_skill=5
+
+m.loser_must_win=4
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='field').first()
+
+m.winner=w
+
+m.winner_skill=3
+
+m.winner_must_win=2
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Benham v Osborne
+
+m = Match(date_played=date(2018, 5, 15))
+
+l = Player.query.filter_by(username='osborne').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='benham').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Flynn v Igoe
+
+m = Match(date_played=date(2018, 5, 15))
+
+l = Player.query.filter_by(username='igoe').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='flynn').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+ 
+
+# Week 3
+
+# Benbrook v Olund
+
+m = Match(date_played=date(2018, 5, 22))
+
+l = Player.query.filter_by(username='benbrook').first()
+
+m.loser=l
+
+m.loser_skill=6
+
+m.loser_must_win=5
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='olund').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Nichols v Osborne
+
+m = Match(date_played=date(2018, 5, 22))
+
+l = Player.query.filter_by(username='osborne').first()
+
+m.loser=l
+
+m.loser_skill=3
+
+m.loser_must_win=2
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='nichols').first()
+
+m.winner=w
+
+m.winner_skill=3
+
+m.winner_must_win=2
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Benham v Igoe
+
+m = Match(date_played=date(2018, 5, 22))
+
+l = Player.query.filter_by(username='igoe').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='benham').first()
+
+m.winner=w
+
+m.winner_skill=4
+
+m.winner_must_win=3
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Burling v Flynn
+
+m = Match(date_played=date(2018, 5, 22))
+
+l = Player.query.filter_by(username='burling').first()
+
+m.loser=l
+
+m.loser_skill=5
+
+m.loser_must_win=4
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='flynn').first()
+
+m.winner=w
+
+m.winner_skill=4
+
+m.winner_must_win=3
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+ 
+
+# Week 4
+
+# Benbrook v Osborne
+
+m = Match(date_played=date(2018, 5, 29))
+
+l = Player.query.filter_by(username='benbrook').first()
+
+m.loser=l
+
+m.loser_skill=6
+
+m.loser_must_win=5
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='osborne').first()
+
+m.winner=w
+
+m.winner_skill=3
+
+m.winner_must_win=2
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Nichols v Igoe
+
+m = Match(date_played=date(2018, 5, 29))
+
+l = Player.query.filter_by(username='igoe').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='nichols').first()
+
+m.winner=w
+
+m.winner_skill=3
+
+m.winner_must_win=2
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Field v Flynn
+
+m = Match(date_played=date(2018, 5, 29))
+
+l = Player.query.filter_by(username='field').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='flynn').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Benham v Burling
+
+m = Match(date_played=date(2018, 5, 29))
+
+l = Player.query.filter_by(username='benham').first()
+
+m.loser=l
+
+m.loser_skill=5
+
+m.loser_must_win=4
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='burling').first()
+
+m.winner=w
+
+m.winner_skill=4
+
+m.winner_must_win=3
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+ 
+
+# Week 5
+
+# Osborne v Igoe
+
+m = Match(date_played=date(2018, 6, 5))
+
+l = Player.query.filter_by(username='osborne').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='igoe').first()
+
+m.winner=w
+
+m.winner_skill=3
+
+m.winner_must_win=2
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Olund v Flynn
+
+m = Match(date_played=date(2018, 6, 5))
+
+l = Player.query.filter_by(username='olund').first()
+
+m.loser=l
+
+m.loser_skill=5
+
+m.loser_must_win=4
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='flynn').first()
+
+m.winner=w
+
+m.winner_skill=6
+
+m.winner_must_win=5
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Nichols v Burling
+
+m = Match(date_played=date(2018, 6, 5))
+
+l = Player.query.filter_by(username='nichols').first()
+
+m.loser=l
+
+m.loser_skill=3
+
+m.loser_must_win=2
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='burling').first()
+
+m.winner=w
+
+m.winner_skill=4
+
+m.winner_must_win=3
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Field v Benham
+
+m = Match(date_played=date(2018, 6, 5))
+
+l = Player.query.filter_by(username='field').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='benham').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+ 
+
+# Week 6
+
+# Benbrook v Igoe
+
+m = Match(date_played=date(2018, 6, 12))
+
+l = Player.query.filter_by(username='igoe').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='benbrook').first()
+
+m.winner=w
+
+m.winner_skill=6
+
+m.winner_must_win=5
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Osborne v Burling
+
+m = Match(date_played=date(2018, 6, 12))
+
+l = Player.query.filter_by(username='osborne').first()
+
+m.loser=l
+
+m.loser_skill=3
+
+m.loser_must_win=2
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='burling').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Olund v Benham
+
+m = Match(date_played=date(2018, 6, 12))
+
+l = Player.query.filter_by(username='olund').first()
+
+m.loser=l
+
+m.loser_skill=5
+
+m.loser_must_win=4
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='benham').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Nichols v Field
+
+m = Match(date_played=date(2018, 6, 12))
+
+l = Player.query.filter_by(username='nichols').first()
+
+m.loser=l
+
+m.loser_skill=3
+
+m.loser_must_win=2
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='field').first()
+
+m.winner=w
+
+m.winner_skill=3
+
+m.winner_must_win=2
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+ 
+
+# Week 7
+
+# Benbrook v Flynn
+
+m = Match(date_played=date(2018, 6, 19))
+
+l = Player.query.filter_by(username='flynn').first()
+
+m.loser=l
+
+m.loser_skill=6
+
+m.loser_must_win=5
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='benbrook').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Igoe v Burling
+
+m = Match(date_played=date(2018, 6, 19))
+
+l = Player.query.filter_by(username='igoe').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='burling').first()
+
+m.winner=w
+
+m.winner_skill=4
+
+m.winner_must_win=3
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Osborne v Field
+
+m = Match(date_played=date(2018, 6, 19))
+
+l = Player.query.filter_by(username='osborne').first()
+
+m.loser=l
+
+m.loser_skill=3
+
+m.loser_must_win=2
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='field').first()
+
+m.winner=w
+
+m.winner_skill=4
+
+m.winner_must_win=3
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Olund v Nichols
+
+m = Match(date_played=date(2018, 6, 19))
+
+l = Player.query.filter_by(username='nichols').first()
+
+m.loser=l
+
+m.loser_skill=3
+
+m.loser_must_win=2
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='olund').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+ 
+
+# Week 8
+
+# Benbrook v Burling
+
+m = Match(date_played=date(2018, 6, 26))
+
+l = Player.query.filter_by(username='benbrook').first()
+
+m.loser=l
+
+m.loser_skill=5
+
+m.loser_must_win=4
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='burling').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Flynn v Benham
+
+m = Match(date_played=date(2018, 6, 26))
+
+l = Player.query.filter_by(username='benham').first()
+
+m.loser=l
+
+m.loser_skill=5
+
+m.loser_must_win=4
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='flynn').first()
+
+m.winner=w
+
+m.winner_skill=6
+
+m.winner_must_win=5
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Igoe v Field
+
+m = Match(date_played=date(2018, 6, 26))
+
+l = Player.query.filter_by(username='igoe').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='field').first()
+
+m.winner=w
+
+m.winner_skill=4
+
+m.winner_must_win=3
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Osborne v Olund
+
+m = Match(date_played=date(2018, 6, 26))
+
+l = Player.query.filter_by(username='osborne').first()
+
+m.loser=l
+
+m.loser_skill=3
+
+m.loser_must_win=2
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='olund').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+ 
+
+# Week 9
+
+# Benbrook v Benham
+
+m = Match(date_played=date(2018, 7, 17))
+
+l = Player.query.filter_by(username='benbrook').first()
+
+m.loser=l
+
+m.loser_skill=5
+
+m.loser_must_win=4
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='benham').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Burling v Field
+
+m = Match(date_played=date(2018, 7, 17))
+
+l = Player.query.filter_by(username='field').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='burling').first()
+
+m.winner=w
+
+m.winner_skill=6
+
+m.winner_must_win=5
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Flynn v Nichols
+
+m = Match(date_played=date(2018, 7, 17))
+
+l = Player.query.filter_by(username='flynn').first()
+
+m.loser=l
+
+m.loser_skill=6
+
+m.loser_must_win=5
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='nichols').first()
+
+m.winner=w
+
+m.winner_skill=3
+
+m.winner_must_win=2
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Igoe v Olund
+
+m = Match(date_played=date(2018, 7, 17))
+
+l = Player.query.filter_by(username='olund').first()
+
+m.loser=l
+
+m.loser_skill=5
+
+m.loser_must_win=4
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='igoe').first()
+
+m.winner=w
+
+m.winner_skill=3
+
+m.winner_must_win=2
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+ 
+
+# Week 10
+
+# Benbrook v Field
+
+m = Match(date_played=date(2018, 7, 24))
+
+l = Player.query.filter_by(username='field').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='benbrook').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Benham v Nichols
+
+m = Match(date_played=date(2018, 7, 24))
+
+l = Player.query.filter_by(username='benham').first()
+
+m.loser=l
+
+m.loser_skill=5
+
+m.loser_must_win=4
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='nichols').first()
+
+m.winner=w
+
+m.winner_skill=3
+
+m.winner_must_win=2
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Burling v Olund
+
+m = Match(date_played=date(2018, 7, 24))
+
+l = Player.query.filter_by(username='burling').first()
+
+m.loser=l
+
+m.loser_skill=6
+
+m.loser_must_win=5
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='olund').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Flynn v Osborne
+
+m = Match(date_played=date(2018, 7, 24))
+
+l = Player.query.filter_by(username='osborne').first()
+
+m.loser=l
+
+m.loser_skill=3
+
+m.loser_must_win=2
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='flynn').first()
+
+m.winner=w
+
+m.winner_skill=6
+
+m.winner_must_win=5
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+ 
+
+# Week 11
+
+# Benbrook v Nichols
+
+m = Match(date_played=date(2018, 7, 31))
+
+l = Player.query.filter_by(username='nichols').first()
+
+m.loser=l
+
+m.loser_skill=3
+
+m.loser_must_win=2
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='benbrook').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Field v Olund
+
+m = Match(date_played=date(2018, 7, 31))
+
+l = Player.query.filter_by(username='field').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=4
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='olund').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=5
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Benham v Osborne
+
+m = Match(date_played=date(2018, 7, 31))
+
+l = Player.query.filter_by(username='osborne').first()
+
+m.loser=l
+
+m.loser_skill=3
+
+m.loser_must_win=2
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='benham').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Flynn v Igoe
+
+m = Match(date_played=date(2018, 7, 31))
+
+l = Player.query.filter_by(username='igoe').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=1
+
+w = Player.query.filter_by(username='flynn').first()
+
+m.winner=w
+
+m.winner_skill=6
+
+m.winner_must_win=5
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+ 
+
+# Week 12
+
+# Benbrook v Olund
+
+m = Match(date_played=date(2018, 8, 7))
+
+l = Player.query.filter_by(username='benbrook').first()
+
+m.loser=l
+
+m.loser_skill=5
+
+m.loser_must_win=4
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='olund').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=2
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=l
+
+g.loser=w
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Nichols v Osborne
+
+m = Match(date_played=date(2018, 8, 7))
+
+l = Player.query.filter_by(username='nichols').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='osborne').first()
+
+m.winner=w
+
+m.winner_skill=3
+
+m.winner_must_win=2
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Benham v Igoe
+
+m = Match(date_played=date(2018, 8, 7))
+
+l = Player.query.filter_by(username='igoe').first()
+
+m.loser=l
+
+m.loser_skill=4
+
+m.loser_must_win=3
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='benham').first()
+
+m.winner=w
+
+m.winner_skill=5
+
+m.winner_must_win=4
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+ 
+
+# Burling v Flynn
+
+m = Match(date_played=date(2018, 8, 7))
+
+l = Player.query.filter_by(username='burling').first()
+
+m.loser=l
+
+m.loser_skill=5
+
+m.loser_must_win=4
+
+m.loser_points_won=0
+
+w = Player.query.filter_by(username='flynn').first()
+
+m.winner=w
+
+m.winner_skill=6
+
+m.winner_must_win=5
+
+m.winner_points_won=3
+
+db.session.add(m)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+g = Game()
+
+g.match=m
+
+g.winner=w
+
+g.loser=l
+
+db.session.add(g)
+
+db.session.commit()
+
+

@@ -1,0 +1,20 @@
+{% if match.winner.id == player.id %}
+  {% set state = 'Won' %}
+  {% set opponent = match.loser %}
+{% else %}
+  {% set state = 'Lost' %}
+  {% set opponent = match.winner %}
+{% endif %}
+
+<table>
+        <tr>
+                <td>
+                        <img src="{{ opponent.avatar(36) }}">
+                </td>
+                <td>
+                        {{ state }} against <a href="{{ url_for('player', username=opponent.username) }}">
+                                {{ opponent.last_name }}, {{ opponent.first_name }}</a>
+                        on {{ match.date_played }}
+                </td>
+        </tr>
+</table>
